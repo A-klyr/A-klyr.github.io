@@ -1,0 +1,47 @@
+<h2>🔁 Flow Control</h2>
+<p>Flow control adalah cara kita mengatur alur logika program menggunakan kondisi dan perulangan.</p>
+
+<h3>1️⃣ Pernyataan Kondisional (if, elif, else)</h3>
+<p>Gunakan struktur ini untuk membuat keputusan dalam program:</p>
+
+<pre><code>x = 10
+
+if x > 0:
+    print("Positif")
+elif x == 0:
+    print("Nol")
+else:
+    print("Negatif")</code></pre>
+
+<p>Output:</p>
+<pre><code>Positif</code></pre>
+
+<h3>2️⃣ Perulangan (for dan while)</h3>
+<p><strong>For loop</strong> digunakan untuk iterasi pada urutan data seperti list atau string:</p>
+
+<pre><code>for i in range(5):
+    print("Nomor:", i)</code></pre>
+
+<p><strong>While loop</strong> berjalan selama kondisi bernilai benar:</p>
+
+<pre><code>count = 0
+while count < 3:
+    print("Hitung:", count)
+    count += 1</code></pre>
+
+<h3>3️⃣ Break dan Continue</h3>
+<p>Untuk mengatur alur di dalam loop:</p>
+<pre><code>for i in range(5):
+    if i == 2:
+        continue  # lompat ke iterasi berikutnya
+    if i == 4:
+        break     # keluar dari loop
+    print(i)</code></pre>
+
+<p>Output:</p>
+<pre><code>0
+1
+3</code></pre>
+
+<hr>
+<p><strong>Kesimpulan:</strong> Flow control adalah fondasi logika program — memutuskan, mengulang, dan mengatur jalannya eksekusi kode agar dinamis.</p>
