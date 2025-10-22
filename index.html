@@ -1,12 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
   <head>
     <meta charset="UTF-8">
-    <title>Belajar Python bareng Loong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Python bareng PAN</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        animation: fadeIn 0.6s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .header {
+        background: linear-gradient(135deg, #3b5998 0%, #192f5d 100%);
+        color: white;
+        padding: 3rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: pulse 4s ease-in-out infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+      
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .header .subtitle {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .content {
+        padding: 2.5rem;
+      }
+      
+      .welcome-card {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-left: 5px solid #3b5998;
+      }
+      
+      .welcome-card h2 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+      }
+      
+      .welcome-card p {
+        color: #34495e;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+      
+      .book-info {
+        background: white;
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+      
+      .book-info:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+      
+      .book-icon {
+        font-size: 4rem;
+        flex-shrink: 0;
+      }
+      
+      .book-details h3 {
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+      }
+      
+      .book-details p {
+        color: #7f8c8d;
+        font-size: 0.95rem;
+      }
+      
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      
+      .feature-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-10px) scale(1.05);
+      }
+      
+      .feature-card .icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .feature-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .feature-card p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+      
+      .footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 0.9rem;
+      }
+      
+      .footer a {
+        color: #3498db;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      
+      .footer a:hover {
+        color: #2ecc71;
+      }
+      
+      @media (max-width: 600px) {
+        .header h1 {
+          font-size: 2rem;
+        }
+        
+        .book-info {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .features {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
-  <body style="font-family:sans-serif; max-width:700px; margin:auto; padding:2rem;">
-    <h1>👋 Halo, Saya Sedang Belajar Python!</h1>
-    <p>Ini adalah catatan perjalanan saya belajar dari buku <em>Automate the Boring Stuff with Python</em>.</p>
-    <p>Silakan ikuti catatan saya di sini, semoga bermanfaat buat teman-teman pemula juga.</p>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>👋 Belajar Python bareng PAN</h1>
+        <p class="subtitle">Perjalanan Otodidak Menuju Python Developer</p>
+      </div>
+      
+      <div class="content">
+        <div class="welcome-card">
+          <h2>Selamat Datang!</h2>
+          <p>
+            Hai teman-teman! Saya sedang dalam perjalanan seru mempelajari Python dari nol. 
+            Di sini saya akan berbagi catatan, tips, dan pengalaman belajar yang semoga bisa 
+            membantu kalian yang juga baru memulai.
+          </p>
+          
+          <div class="book-info">
+            <div class="book-icon">📚</div>
+            <div class="book-details">
+              <h3>Automate the Boring Stuff with Python</h3>
+              <p>
+                Buku panduan utama yang saya gunakan untuk belajar Python secara praktis 
+                dan langsung bisa diaplikasikan dalam kehidupan sehari-hari.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="features">
+          <div class="feature-card">
+            <div class="icon">📝</div>
+            <h3>Catatan Lengkap</h3>
+            <p>Ringkasan setiap bab dengan bahasa yang mudah dipahami</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="icon">💡</div>
+            <h3>Tips & Trik</h3>
+            <p>Pengalaman praktis dari setiap pembelajaran</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="icon">🚀</div>
+            <h3>Project Ideas</h3>
+            <p>Ide-ide project untuk praktik langsung</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer">
+        <p>💻 Mari belajar Python bersama-sama! | © 2025 PAN's Python Journey</p>
+      </div>
+    </div>
   </body>
 </html>
